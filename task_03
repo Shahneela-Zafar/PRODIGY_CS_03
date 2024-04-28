@@ -1,4 +1,12 @@
 def check_complexity(password):
+    star_variable = ""
+    for i in range(5):
+        star_variable += "*"
+    star_variable *= 3
+
+    password_variable = password
+    password_length = len(password_variable)
+
     if len(password) >= 8:
         if any((i.isupper() for i in password)) and any((i.islower() for i in password)) and any((i.isdigit() for i in password)) and any((not i.isalnum() for i in password)):
             print("Password is strong")
@@ -15,8 +23,10 @@ def check_complexity(password):
             if not any(not i.isalnum() for i in password):
                 print("Password should contain at least one Special Character")
     else:
-        print("Password Should be 8 characters long") 
-    
+        print("Password Should be 8 characters long")
+
+    print(star_variable)
+    print("Password length:", password_length)
 
 password = input("Enter a Password: ")
 check_complexity(password)
